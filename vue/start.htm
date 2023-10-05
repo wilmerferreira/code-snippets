@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Growler</title>
+  <style>
+    .online {
+        color: green;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="growler">
+    <h1>{{ appName }}</h1>
+    <h2 v-text="appName"></h2>
+    
+    <label>appName (v-bind)</label>
+    <input type="text" v-bind:value="appName">
+    
+    <label>appName (v-model)</label>
+    <input type="text" v-model:value="appName">
+
+    <p v-bind:style="{ color:pColor, fontFamily:pFontFamily, 'font-weight':pFontWeight, margin: pMargin }">{{ pColor }}</p>
+    <span v-bind:class="{ 'online':isOnline }">{{ isOnline }}</span>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Expression</th>
+          <th>Reactive</th>
+          <th>Computed</th>
+          <th>Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>appName</th>
+          <td>Yes</td>
+          <td><input v-bind:value="computedAppName" /></td>
+          <td><input v-bind:value="appNameMethod()" /></td>
+        </tr>
+        <tr>
+          <th>Date.now()</th>
+          <td>No</td>
+          <td><input v-bind:value="computedNow" /></td>
+          <td><input v-bind:value="nowMethod()" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    
+  <script type="text/javascript" src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    var growler = new Vue({
+      el: '#growler',
+      data: {
+        appName: 'Growler',
+        pColor: '#ff0000',
+        pFontFamily: 'Consolas',
+        pFontWeight: 'bold',
+        pMargin: 20,
+        isOnline: true
+      },
+      computed: {
+        computedAppName: function() {
+          return this.appName;
+        },
+        computedNow: function() {
+          return Date.now();
+        }
+      },
+      methods: {
+        appNameMethod: function() {
+          return this.appName;
+        },
+        nowMethod: function() {
+          return Date.now();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

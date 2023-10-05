@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sandbox</title>
+</head>
+<body>
+  <div id="no-support" hidden>
+    <h1>ECMA Script is NOT supported in this browser</h1>
+    <ul>
+      <li><b>Microsoft Edge</b>: go to <a href="about:flags">about:flags</a> and <b>check</b> the <u>Experimental JavaScript Features</u></li>
+      <li><b>Mozilla Firefox</b>: go to <a href="about:config">about:config</a> and set <u>dom.moduleScripts.enabled</u> as <b>true</b></li>
+      <li><b>Google Chrome</b>: go to <a href="chrome://flags">chrome://flags</a> and enable <u>Experimental Web Platform features</u></li>
+    </ul>        
+  </div>
+  <script nomodule>
+    document.getElementById('no-support').hidden = false;
+  </script>
+
+  <script src="assets/scripts/main.js" type="module"></script>
+</body>
+</html>
