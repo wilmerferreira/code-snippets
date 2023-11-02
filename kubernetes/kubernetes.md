@@ -82,6 +82,24 @@ The built-in namespaces are:
 - [RedHat OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift)
 - [Rancher Kubernetes Engine (RKE)](https://www.rancher.com/products/rke)
 
+### Standalone Management Applications
+
+- [Aptakube](https://aptakube.com/)
+- [Infra App](https://infra.app/)
+- [Kubenav](https://kubenav.io/)
+- [K9s](https://k9scli.io/)
+- [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
+- [Kubernetes Operational View](https://codeberg.org/hjacobs/kube-ops-view)
+- [Kubernator](https://github.com/smpio/kubernator)
+- [Kubernetic](https://www.kubernetic.com/)
+- [Kubevious](https://kubevious.io/)
+- [Kui](https://github.com/kubernetes-sigs/kui)
+- [Lens Desktop](https://k8slens.dev/desktop.html)
+- [Octant](https://octant.dev/)
+- [Portainer](https://www.portainer.io/)
+- [Skooner](https://skooner.io/) (formerly K8Dash)
+- [Weave Scope](https://www.weave.works/oss/scope/)
+
 ## Container Runtime Interface
 
 - Orchestration: Docker + k8s
