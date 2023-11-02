@@ -1,11 +1,25 @@
 # Linux
 
+The following commands helps to find out which version is installed
+
+```sh
+# Returns the machine name, kernel's version and some more information
+uname -a
+
+# Returns some variables about the current distro's release
+cat /etc/*release
+
+# Returns more or less the same information in a better looking way
+neofetch
+```
+
 ## Package Managers
 
 - `DPKG` (Debian Package Management System)
-  - `apt` (Advanced Packaging Tool) and `aptitude` (Aptitude Package Manager)
+  - `apt` (Advanced Packaging Tool): used by _ubuntu_.
+  - `aptitude` (Aptitude Package Manager)
 
-- `RPM` (Red Hat Package Manager)
+- `RPM` (Red Hat Package Manager), it is also used by _fedora_.
   - `yum` (Yellowdog Updater, Modified) and `dnf` (Dandified Yum)
   - `zypper` and `YaST`
 
