@@ -192,3 +192,7 @@ for item in menu_list:
 ## More Information
 
 - [Difference between List VS Set VS Tuple in Python](https://www.geeksforgeeks.org/difference-between-list-vs-set-vs-tuple-in-python/)
+- [Python CheatSheet](https://www.pythoncheatsheet.org/cheatsheet)
+- [Python Tutorial](https://www.pythontutorial.net/)
+- [Projects - Raspberry Pi](https://projects.raspberrypi.org/en/paths)
+- [Sense HAT Emulator](https://sense-emu.readthedocs.io/)
