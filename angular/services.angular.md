@@ -10,18 +10,18 @@ Services needs to be added in the `providers` array property within the `app.mod
 import { MyCustomService } from './my-custom.service';
 
 @NgModule({
-    imports: [
-      // List of modules
-    ],
-    declarations: [
-      // List of components, directives and pipes
-    ],
-    bootstrap: [
-      // List of bootstrap modules
-    ],
-    providers: [
-      MyCustomService
-    ]
+  imports: [
+    // List of modules
+  ],
+  declarations: [
+    // List of components, directives and pipes
+  ],
+  bootstrap: [
+    // List of bootstrap modules
+  ],
+  providers: [
+    MyCustomService
+  ]
 })
 export class AppModule {}
 ```
@@ -79,18 +79,18 @@ export class MyCustomComponent {
      };
      
      @NgModule({
-         imports: [
-           // List of modules
-         ],
-         declarations: [
-           // List of components, directives and pipes
-         ],
-         bootstrap: [
-           // List of bootstrap modules
-         ],
-         providers: [
-           { provide: 'lookupListToken', useValue: lookupLists }
-         ]
+       imports: [
+         // List of modules
+       ],
+       declarations: [
+         // List of components, directives and pipes
+       ],
+       bootstrap: [
+         // List of bootstrap modules
+       ],
+       providers: [
+         { provide: 'lookupListToken', useValue: lookupLists }
+       ]
      })
      export class AppModule {}
      ```
@@ -109,9 +109,9 @@ export class MyCustomComponent {
        styleUrls: [ 'my-custom.component.css' ]
      })
      export class MyCustomComponent {
-         constructor(
-           private myCustomService: MyCustomService
-           @Inject('lookupListToken') public lookupLists) {}
+       constructor(
+         private myCustomService: MyCustomService
+         @Inject('lookupListToken') public lookupLists) {}
      }
      ```
 
@@ -146,18 +146,18 @@ export class MyCustomComponent {
      import { lookupListToken, lookupLists } from './providers';
      
      @NgModule({
-         imports: [
-           // List of modules
-         ],
-         declarations: [
-           // List of components, directives and pipes
-         ],
-         bootstrap: [
-           // List of bootstrap modules
-         ],
-         providers: [
-           { provide: lookupListToken, useValue: lookupLists }
-         ]
+       imports: [
+         // List of modules
+       ],
+       declarations: [
+         // List of components, directives and pipes
+       ],
+       bootstrap: [
+         // List of bootstrap modules
+       ],
+       providers: [
+         { provide: lookupListToken, useValue: lookupLists }
+       ]
      })
      export class AppModule {}
      ```
@@ -177,8 +177,8 @@ export class MyCustomComponent {
        styleUrls: [ 'my-custom.component.css' ]
      })
      export class MyCustomComponent {
-         constructor(
-           private myCustomService: MyCustomService
-           @Inject(lookupListToken) public lookupLists) {}
+       constructor(
+         private myCustomService: MyCustomService
+         @Inject(lookupListToken) public lookupLists) {}
      }
      ```

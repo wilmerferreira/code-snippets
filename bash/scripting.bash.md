@@ -20,9 +20,9 @@ Print the variables
 #!/bin/bash
 
 if [[ $# -gt 0 ]]; then
-    echo 'Number of arguments:' $#
-    echo $@
+  echo 'Number of arguments:' $#
+  echo $@
 else
-    echo 'No arguments'
+  echo 'No arguments'
 fi
 ```

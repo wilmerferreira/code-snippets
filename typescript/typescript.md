@@ -51,7 +51,7 @@ They can be used in:
 ```ts
 // This is a function decorator
 function (target: Object, methodName: string, descriptor: TypedPropertyDescriptor<Function>) {
-
+  // ...
 }
 ```
 
