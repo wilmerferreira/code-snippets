@@ -1,4 +1,4 @@
-# JIRA
+# Jira
 
 ## Ticket Types
 
@@ -25,4 +25,6 @@
 
 ## More Information
 
+- [Jira](https://www.atlassian.com/software/jira)
+- [Jira Docs](https://confluence.atlassian.com/jira)
 - [What are issue types?](https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/)

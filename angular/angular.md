@@ -141,10 +141,10 @@ Structural directives using sugar syntax start with `*`
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-    selector: '[mwFavorite]'
+  selector: '[mwFavorite]'
 })
 export class FavoriteDirective {
-    @HostBinding('class.is-favorite') isFavorite = true;
+  @HostBinding('class.is-favorite') isFavorite = true;
 }
 ```
 
@@ -205,13 +205,13 @@ A template expression operator that takes in a value and returns a new value rep
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'categoryList',
-    pure: true // true means stateless (this parameter is optional)
+  name: 'categoryList',
+  pure: true // true means stateless (this parameter is optional)
 })
 export class CategoryListPipe implements PipeTransform {
-    transform(mediaItems) {
-
-    }
+  transform(mediaItems) {
+    // ...
+  }
 }
 ```
 
@@ -259,19 +259,19 @@ import { AppComponent } from './app.component';
 
 @NgModule()
 export class AppModule {{
-    imports: [
-        BrowserModule
-        // Bring all other modules that this module will need
-    ],
-    declarations: [
-        AppComponent
-        // Any other components, directives and pipes available to this module that don't come from another module
-        // Do not include any services, modules or any other classes
-    ],
-    bootstrap: [
-        // Root module, define the starting component(s) for the bootstrap process (entry point of the app code)
-        AppComponent
-    ]
+  imports: [
+    BrowserModule
+    // Bring all other modules that this module will need
+  ],
+  declarations: [
+    AppComponent
+    // Any other components, directives and pipes available to this module that don't come from another module
+    // Do not include any services, modules or any other classes
+  ],
+  bootstrap: [
+    // Root module, define the starting component(s) for the bootstrap process (entry point of the app code)
+    AppComponent
+  ]
 }}
 ```
 
@@ -286,12 +286,12 @@ Main/root app component
   
   // This decorator needs at least two metadata properties/arguments (selector and template)
   @Component({
-      selector: 'app-root'
-      // This will be rendered within the selector's element
-      template: '<h1>My App</h1>',
-      styles: [
-          'h1 { color: #dddddd; }'          
-      ]
+    selector: 'app-root'
+    // This will be rendered within the selector's element
+    template: '<h1>My App</h1>',
+    styles: [
+      'h1 { color: #dddddd; }'          
+    ]
   })
   export class AppComponent {}
   ```
@@ -303,9 +303,9 @@ Main/root app component
   
   // This decorator needs at least two metadata properties/arguments (selector and template url)
   @Component({
-      selector: 'app-root'
-      templateUrl: './app.component.html',
-      styleUrls: [ './app.component.css' ]
+    selector: 'app-root'
+    templateUrl: './app.component.html',
+    styleUrls: [ './app.component.css' ]
   })
   export class AppComponent {}
   ```

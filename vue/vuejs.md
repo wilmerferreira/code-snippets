@@ -16,21 +16,21 @@
 
 // Define a Vue app
 var growler = new Vue({
-    el: '#growler',
-    data: {
-        appName: 'Growler',
-        pColor: '#ff0000',
-        pFontFamily: 'Consolas',
-        pFontWeight: 'bold',
-        pMargin: 20,
-        isOnline: true
-    }
+  el: '#growler',
+  data: {
+    appName: 'Growler',
+    pColor: '#ff0000',
+    pFontFamily: 'Consolas',
+    pFontWeight: 'bold',
+    pMargin: 20,
+    isOnline: true
+  }
 });
 
 // Define a Vue component, the first argument it's the element name
 Vue.component('main-header', {
-    props: ['text'],
-    template: '<h1>{{ text }}</h1>'
+  props: ['text'],
+  template: '<h1>{{ text }}</h1>'
 });
 
 ```

@@ -6,8 +6,8 @@ Install Avro Generation tool (_aka_ avrogen)
 
 ```ps1
 dotnet tool install Confluent.Apache.Avro.AvroGen `
---version 1.7.7.5 `
---global
+  --version 1.7.7.5 `
+  --global
 ```
 
 ## References
