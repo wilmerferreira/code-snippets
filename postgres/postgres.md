@@ -24,8 +24,13 @@ Running Postgres in docker using the [official image](https://hub.docker.com/_/p
 docker run --name postgres -d -e POSTGRES_PASSWORD=postgres -p "5432:5432" -v "F:\:/mnt/shared" --restart=always postgres
 ```
 
+## Connection String
+
+`Server=127.0.0.1;Port=5432;Database=myDataBase;User Id=postgres;Password=postgres;`
+
 ## More Information
 
 - [Postgres Docs](https://www.postgresql.org/docs/)
   - [System Functions](https://www.postgresql.org/docs/9.5/functions-info.html)
   - [System Views](https://www.postgresql.org/docs/current/views-overview.html)
+- [Connection Strings](https://www.connectionstrings.com/postgresql/)
