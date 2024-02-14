@@ -250,6 +250,6 @@ To set a variable use `PS1="\h \W \u [\t] \$"`
 
 ## References
 
-- [Bash scripting cheatsheet](https://devhints.io/bash)
+- [Bash scripting cheat sheet](https://devhints.io/bash)
 - [Unofficial bash strict mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
 - [special_parameters_and_shell_variables](https://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables)
