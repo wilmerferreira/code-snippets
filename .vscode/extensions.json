@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "bierner.markdown-mermaid",
+        "streetsidesoftware.code-spell-checker",
+        "davidanson.vscode-markdownlint",
+        "redhat.vscode-yaml"
+    ]
+}
