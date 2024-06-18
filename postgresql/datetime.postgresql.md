@@ -98,4 +98,4 @@ SELECT to_char('2016-08-12 16:40:32'::timestamp, '"Today is "FMDay", the "DDth" 
 ## Investigate
 
 - Cast between types
-- Operations on types (e.g. add hours, subtract days)
+- Operations on types (e.g. add hours, subtract days, convert to another timezone)

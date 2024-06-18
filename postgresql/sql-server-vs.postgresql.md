@@ -17,12 +17,12 @@ TBC
 
 ### String
 
-| SQL Server    | Postgres                          |
-|---------------|-----------------------------------|
-| `LEN()`       | `LENGTH()`                        |
-| `&`           | `||`                              |
-| N/A           | `initcap()`                       |
-| `LIKE`        | `LIKE`, `ILIKE`                   |
+| SQL Server    | Postgres                          | Notes                                                                                     |
+|---------------|-----------------------------------|-------------------------------------------------------------------------------------------|
+| `LEN()`       | `LENGTH()`                        |                                                                                           |
+| `&`           | `\|\|`                            |                                                                                           |
+| N/A           | `initcap()`                       | Converts the first letter of each word in a string to uppercase and the rest to lowercase |
+| `LIKE`        | `LIKE`, `ILIKE`                   |                                                                                           |
 
 Shorthand operators for `like` and `ilike`
 
