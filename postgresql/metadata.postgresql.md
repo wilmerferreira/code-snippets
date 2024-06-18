@@ -22,17 +22,17 @@
               c.ordinal_position
 
   -- Using native system tables/views
-  select  namespaces.nspname schema_name,
-          classes.relname table_name,
-          attributes.attname column_name
-  from    pg_namespace namespaces
-  join    pg_class classes
-      on  classes.relnamespace = namespaces.oid
-  join    pg_attribute attributes
-      on  attributes.attrelid = classes.oid
-      and attributes.attnum > 0
-      and attributes.attisdropped = false
-  order by namespaces.nspname,
-           classes.relname,
-           attributes.attnum
+  select      namespaces.nspname schema_name,
+              classes.relname table_name,
+              attributes.attname column_name
+  from        pg_namespace namespaces
+  join        pg_class classes
+      on      classes.relnamespace = namespaces.oid
+  join        pg_attribute attributes
+      on      attributes.attrelid = classes.oid
+      and     attributes.attnum > 0
+      and     attributes.attisdropped = false
+  order by    namespaces.nspname,
+              classes.relname,
+              attributes.attnum
   ```
