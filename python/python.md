@@ -167,28 +167,10 @@ except ValueError as error: # Capturing the error information in the 'error' var
   # ...
 ```
 
-## Modules
-
-`pip` is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes
-
-```py
-pip install requests
-```
-
-```py
-import requests
-
-my_request = requests.get('http://go.codeschool.com/spamvanmenu')
-menu_list = my_request.json()
-
-# print(menu_list)
-print("Today's menu")
-
-for item in menu_list:
-  # print(item['name'], item['desc'], item['price'])
-  print(item['name'], ': ', item['desc'].title(), ', $', item['price'], sep = '')
-```
-
 ## More Information
 
 - [Difference between List VS Set VS Tuple in Python](https://www.geeksforgeeks.org/difference-between-list-vs-set-vs-tuple-in-python/)
+- [Python CheatSheet](https://www.pythoncheatsheet.org/cheatsheet)
+- [Python Tutorial](https://www.pythontutorial.net/)
+- [Projects - Raspberry Pi](https://projects.raspberrypi.org/en/paths)
+- [Sense HAT Emulator](https://sense-emu.readthedocs.io/)

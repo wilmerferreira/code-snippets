@@ -1,16 +1,5 @@
 # SpecFlow
 
-- Feature Headers
-  - `who`
-  - `what`
-  - `why`
-- Scenario steps
-  - `given`
-  - `when`
-  - `then`
-- `#comments`
-- `@tags`
-
 ```feature
 Feature: FeatureName
     Description
@@ -30,3 +19,26 @@ Scenario Outline: This is the scenario name or description
     | 1     |
     | 2     |
 ```
+
+## Bindings
+
+### Step definitions
+
+- `[Given(expression)]` or `[Given]` - `TechTalk.SpecFlow.GivenAttribute`
+- `[When(expression)]` or `[When]` - `TechTalk.SpecFlow.WhenAttribute`
+- `[Then(expression)]` or `[Then]` - `TechTalk.SpecFlow.ThenAttribute`
+- `[StepDefinition(expression)]` or `[StepDefinition]` - `TechTalk.SpecFlow.StepDefinitionAttribute`, matches for given, when or then attributes
+
+### Hooks
+
+- `[BeforeTestRun]` / `[AfterTestRun]`
+- `[BeforeFeature]` / `[AfterFeature]`
+- `[BeforeScenario]` or `[Before]`
+- `[AfterScenario]` or `[After]`
+- `[BeforeScenarioBlock]` / `[AfterScenarioBlock]`
+- `[BeforeStep]` / `[AfterStep]`
+
+## More Information
+
+- [Docs](https://docs.specflow.org/en/latest/)
+- [SpecFlowOSS - GitHub](https://github.com/SpecFlowOSS/)

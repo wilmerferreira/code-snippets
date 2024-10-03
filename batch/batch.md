@@ -195,7 +195,7 @@ Comparison Or with a case insensitive comparison
 
 ```cmd
 IF /I "%var%"=="hello, world!" (
-    ECHO found
+  ECHO found
 )
 ```
 

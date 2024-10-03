@@ -252,7 +252,7 @@ type User {
 ## References
 
 - [Learn GraphQL](https://graphql.org/learn/)
-- [Code: Using GraphQL](graphql.org/code)
+- [Code: Using GraphQL](https://graphql.org/code/)
 - [Apollo](https://www.apollographql.com/)
 - [Hasura](https://hasura.io/)
 - [Prisma](https://www.prisma.io/)
