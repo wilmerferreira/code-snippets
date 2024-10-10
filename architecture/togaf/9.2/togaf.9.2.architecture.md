@@ -1,5 +1,35 @@
 # TOGAF 9.2
 
+Certification path:
+
+1. TOGAF 9 Foundation
+2. TOGAF 9 Certified
+
+## Foundation
+
+Parts:
+
+1. Introduction
+2. Architecture Development Method (ADM)
+3. Guidelines and Techniques
+4. Architecture Content Framework
+5. Enterprise Continuum
+6. Architecture Capability Framework
+
+Additional material can be found in the _Core Standard_ + _TOGAF Library_.
+
+Core Concepts:
+
+1. The definition of enterprise
+2. The architecture domains: Business, Data, Application and Technology (BDAT)
+   - Business Domain
+   - Data Domain
+3. The architecture development method, or ADM
+4. Deliverables, artifacts and building blocks
+5. The enterprise continuum
+6. The architecture repository
+7. And, defining architecture capability
+
 ## BDAT
 
 These are the four architectural domains:
@@ -19,12 +49,13 @@ These are the phases in the  _Architecture Development Framework_:
 These are structure in the following way:
 
 - Preliminary Phase
-- `B`, `C` and `D`: [BDAT](#BDAT)
+- `B`, `C` and `D`: [BDAT](#bdat)
 - `E` and `F`: Planning
 - `G`: Implementation
 - `H`: Change Management
 
 Apart from all these there is an additional one called: _Requirements Management Phase_ which is ongoing alongside with the others.
+
 ## ACF
 
 These are the items in the _Architecture Content Framework_:
@@ -46,4 +77,8 @@ These are the items in the _Architecture Content Framework_:
 
 ### Architecture Capability
 
-People and processes that establish the architecture. This sits between governance and repository.
+People and processes that establish the architecture. This sits between governance and repository
+
+## More Information
+
+- [TOGAF® Certification Portfolio](https://www.opengroup.org/certifications/togaf-certification-portfolio)
