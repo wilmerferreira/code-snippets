@@ -43,8 +43,16 @@ These are the four architectural domains:
 
 These are the phases in the  _Architecture Development Framework_:
 
-1. Preliminary Phase
-2. ...
+- [Preliminary Phase](./adm/0-preliminary-phase.md)
+- [A: Architecture Vision](./adm/a-architecture-vision.md)
+- [B: Business Architecture](./adm/b-business-architecture.md)
+- [C: Information System Architectures](./adm/c-information-system-architectures.md)
+- [D: Technology Architecture](./adm/d-technology-architecture.md)
+- [E: Opportunities and Solutions](./adm/e-opportunities-and-solutions.md)
+- [F: Migration Planning](./adm/f-migration-planning.md)
+- [G: Implementation Governance](./adm/g-implementation-governance.md)
+- [H: Architecture Change Management](./adm/h-architecture-change-management.md)
+- [Requirements Management](./adm/requirements-management.md)
 
 These are structure in the following way:
 
