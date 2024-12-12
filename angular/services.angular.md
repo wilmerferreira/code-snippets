@@ -1,5 +1,11 @@
 # Angular: Services & Dependency Injection
 
+Built-In Services
+
+- `Http`
+- `FormBuilder`
+- `Router`
+
 ## Declaration / Configuration
 
 Services needs to be added in the `providers` array property within the `app.module.ts`
@@ -10,18 +16,12 @@ Services needs to be added in the `providers` array property within the `app.mod
 import { MyCustomService } from './my-custom.service';
 
 @NgModule({
-  imports: [
-    // List of modules
-  ],
-  declarations: [
-    // List of components, directives and pipes
-  ],
-  bootstrap: [
-    // List of bootstrap modules
-  ],
+  declarations: [ /* ... */ ],
+  imports: [ /* ... */ ],
   providers: [
     MyCustomService
-  ]
+  ],
+  bootstrap: [ /* ... */ ]
 })
 export class AppModule {}
 ```
