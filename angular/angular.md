@@ -188,35 +188,6 @@ export class AppComponent { // Note that this class is exported and it has a "Co
 }
 ```
 
-### Pipes
-
-A template expression operator that takes in a value and returns a new value representation
-
-```html
-<h1>{{ item.name | slice: 0: 10 | uppercase }}</h1>
-```
-
-[Built-In Pipes](https://angular.io/api?type=pipe)
-
-#### Custom Pipes
-
-```ts
-// category-list.pipe.ts
-import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({
-  name: 'categoryList',
-  pure: true // true means stateless (this parameter is optional)
-})
-export class CategoryListPipe implements PipeTransform {
-  transform(mediaItems) {
-    // ...
-  }
-}
-```
-
-> Remember to add the custom pipe to the `app.module.ts`
-
 ### Decorator
 
 - `@` decorator's indicator
@@ -227,25 +198,23 @@ export class CategoryListPipe implements PipeTransform {
 @Component() // In this case the decorator name is called "Component"
 ```
 
-Common Decorators
+Common Decorators:
 
-- Component
-- Input: used to allow property binding in components
-- Output: used to allow property binding in components, used in event binding
-
-### Services
-
-`PENDING`
-
-Built-In Services
-
-- `Http`
-- `FormBuilder`
-- `Router`
+- `Component`
+- `Input`: used to allow property binding in components
+- `Output`: used to allow property binding in components, used in event binding
+- `NgModule`
 
 ## Main assets
 
 ### app.module.ts
+
+This will include 4 primary sections:
+
+- `declarations`: list of **components**, **directives** and **pipes** used in the app.
+- `imports`: list of other **modules** used in the app.
+- `providers`: list of **services** used in the app.
+- `bootstrap`: main **component** used to bootstrap the app.
 
 ```ts
 // This can be the module name or the path
@@ -257,22 +226,24 @@ import { BrowserModule } from '@angular/platform-browser';
 // Relative path to the file (the file's extension is not needed)
 import { AppComponent } from './app.component';
 
-@NgModule()
-export class AppModule {{
-  imports: [
-    BrowserModule
-    // Bring all other modules that this module will need
-  ],
+@NgModule({
   declarations: [
     AppComponent
-    // Any other components, directives and pipes available to this module that don't come from another module
-    // Do not include any services, modules or any other classes
+    // Components, directives and pipes
+  ],
+  imports: [
+    BrowserModule
+    // Other modules used in the app
+  ],
+  providers: [
+    // Services used in the app
   ],
   bootstrap: [
-    // Root module, define the starting component(s) for the bootstrap process (entry point of the app code)
+    // Root/starting component(s) for the bootstrap (entry point of the app code)
     AppComponent
   ]
-}}
+})
+export class AppModule { }
 ```
 
 ### app.component.ts
@@ -328,23 +299,22 @@ platformBrowserDynamic().bootstrapModule(AppModule);
   - Identify code at a glace
   - Flattest structure possible
   - Try to be _DRY_ (Don't repeat yourself)
-- Keep the local imports separated from the official imports
+- Keep the local `imports` separated from the official imports
 - Use `templateUrl` instead of inline `template`
 - Use `styleUrls` instead of inline `style`
-- Prefix components in order to avoid clashes
-- Name components (element name and files) using kebab style (lowercase and dashes between words)
+- Prefix `components` in order to avoid clashes
+- Name `components` (element name and files) using `kebab-case` (lowercase and dashes between words)
   - Use the following convention for the component's assets (`<descriptor>.<type>.<filetype>`)
     - `your-component-name.component.html`
     - `your-component-name.component.ts`
     - `your-component-name.component.spec.ts`
     - `your-component-name.component.css`
-- Prefix the assets with your app or feature, recommendation from the [Angular CLI](http://angular.io)
-- Define `private` functions after the public ones in classes
+- Prefix the assets with your _app name_ or _feature name_, recommendation from the [Angular CLI](http://angular.io)
+- Define `private` `functions` after the `public` ones in classes
 
 ## Questions
 
-- Observable vs Promises
-- async/await
+- `Observable` vs `Promises` vs `async`/`await`
 - Structure big angular projects
 - Reuse angular components in other projects
 - Minify assets
