@@ -87,3 +87,4 @@ sequenceDiagram
 
 - [OAuth 2.0](https://oauth.net/2/)
 - [Token grant flows - Microsoft Docs](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
+- [OAuth 2.0 access tokens explained](https://www.youtube.com/watch?v=BNEoKexlmA4)
