@@ -58,13 +58,9 @@ sequenceDiagram
 
 Also know as _grant types_:
 
-- Authorization Code
-- Proof Key for Code Exchange (PKCE)
-- Client Credentials
-- Device Code
-- Refresh Token
-- Implicit flow (legacy)
-- Password grant (legacy)
+### Authorization Code
+
+Enables a _client_ application to obtain authorized access to protected resources like web APIs. The auth code flow requires a user-agent that supports redirection from the authorization server (the Microsoft identity platform) back to your application. For example, a web browser, desktop, or mobile application operated by a user to sign in to your app and access their data.
 
 ```mermaid
 sequenceDiagram
@@ -83,8 +79,39 @@ sequenceDiagram
     Resource-->>-Client: Protected resource
 ```
 
+### Proof Key for Code Exchange (PKCE)
+
+### Client Credentials
+
+> Sometimes called _two-legged OAuth_
+
+Permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. Can be used to access web-hosted resources by using the identity of an application. This type is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user, and is often referred to as _daemons_ or _service accounts_.
+
+### Device Authorization Grant
+
+Allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer. To enable this flow, the device has the user visit a webpage in a browser on another device to sign in. Once the user signs in, the device is able to get access tokens and refresh tokens as needed.
+
+### Refresh Token
+
+TBD
+
+### Implicit flow (legacy)
+
+> **Do not use the implicit grant flow!**. In most scenarios, more secure alternatives are available and recommended. Certain configurations of this flow requires a very high degree of trust in the application, and carries risks that are not present in other flows. You should only use this flow when other more secure flows aren't viable.
+
+The defining characteristic of the implicit grant is that tokens (ID tokens or access tokens) are returned directly from the `/authorize` endpoint instead of the `/token` endpoint. This is often used as part of the [authorization code](#authorization-code) flow, in what is called the _hybrid flow_ - retrieving the ID token on the `/authorize` request along with an authorization code.
+
+### Resource Owner Password Credentials (ROPC)
+
+> **Do not use the ROPC flow!**; it's incompatible with multifactor authentication (MFA). In most scenarios, more secure alternatives are available and recommended. This flow requires a very high degree of trust in the application, and carries risks that aren't present in other flows. You should only use this flow when more secure flows aren't viable.
+
+> Sometimes called password grant
+
+Allows an application to sign in the user by directly handling their password. This article describes how to program directly against the protocol in your application.
+
 ## More Information
 
 - [OAuth 2.0](https://oauth.net/2/)
+- [OAuth Playground](https://www.oauth.com/playground/)
 - [Token grant flows - Microsoft Docs](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
 - [OAuth 2.0 access tokens explained](https://www.youtube.com/watch?v=BNEoKexlmA4)
