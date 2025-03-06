@@ -87,13 +87,13 @@ sequenceDiagram
 
 Permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. Can be used to access web-hosted resources by using the identity of an application. This type is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user, and is often referred to as _daemons_ or _service accounts_.
 
+### Refresh Token
+
+This grant type allows clients to obtain new access tokens using refresh tokens without involving the user again. It is typically used in combination with other grant types (e.g., [authorization code](#authorization-code) grant) to extend the session without user re-authentication.
+
 ### Device Authorization Grant
 
 Allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer. To enable this flow, the device has the user visit a webpage in a browser on another device to sign in. Once the user signs in, the device is able to get access tokens and refresh tokens as needed.
-
-### Refresh Token
-
-TBD
 
 ### Implicit flow (legacy)
 
