@@ -79,7 +79,21 @@ sequenceDiagram
     Resource-->>-Client: Protected resource
 ```
 
-### Proof Key for Code Exchange (PKCE)
+#### Proof Key for Code Exchange (PKCE)
+
+Enhances the security of the OAuth 2.0 Authorization Code Grant flow. It was originally designed for mobile and public client applications that can't securely store a client secret, but it's now recommended for all client types.
+
+Here's how _PKCE_ works:
+
+1. **Code Challenge Generation**: The client generates a random string (code verifier) and then creates a hash of this string (code challenge).
+
+2. **Authorization Request**: The client includes the code challenge in the authorization request to the authorization server.
+
+3. **Authorization Response**: After the user authenticates and authorizes the client, the authorization server returns an authorization code to the client.
+
+4. **Token Request**: The client sends the authorization code, along with the code verifier, to the token endpoint.
+
+5. **Token Response**: The authorization server verifies the code challenge with the code verifier. If they match, it issues the access token.
 
 ### Client Credentials
 
