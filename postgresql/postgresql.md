@@ -16,17 +16,20 @@ Postgres by default runs on port `5432`, and when not specified connects to the 
 - [TablePlus](https://tableplus.com/)
 - [ToadEdge](https://www.quest.com/products/toad-edge/) (Trial)
 
+## Connection String
+
+`Server=127.0.0.1;Port=5432;Database=myDataBase;User Id=postgres;Password=postgres;`
+
 ## Docker
 
 Running Postgres in docker using the [official image](https://hub.docker.com/_/postgres/)
 
+> You can connect to the following container using this connection string
+> `Server=localhost;Port=5432;Database=postgres;User Id=postgres;Password=postgres;`
+
 ```sh
 docker run --name postgres -d -e POSTGRES_PASSWORD=postgres -p "5432:5432" -v "D:\:/mnt/shared" --restart=always postgres
 ```
-
-## Connection String
-
-`Server=127.0.0.1;Port=5432;Database=myDataBase;User Id=postgres;Password=postgres;`
 
 ## Basics
 
