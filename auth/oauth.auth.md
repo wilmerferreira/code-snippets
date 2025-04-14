@@ -46,19 +46,17 @@ Before the client and servers start to exchange messages they need to establish 
 sequenceDiagram
     autonumber
     participant Client as Consumer App <br /> (Client)
-    participant Server as OAuth Server <br /> (Authorization Server)
+    participant Server as Authorization Server <br /> (OAuth Server)
 
-    Client->>+Server: Register
-    Note over Client: Client name, Redirect Uri
-    Server-->>-Client: ClientID and Secret
-    Note over Server: Client name, Redirect Uri
+    Client->>+Server: Register <br /> (client_name, callback_url)
+    Server->>-Client: client_id, secret
 ```
 
 ## Token grant flows
 
-Also know as _grant types_:
+These are the grant flows, also know as _grant types_:
 
-### Authorization Code
+### 1. Authorization Code
 
 Enables a _client_ application to obtain authorized access to protected resources like web APIs. The auth code flow requires a user-agent that supports redirection from the authorization server (the Microsoft identity platform) back to your application. For example, a web browser, desktop, or mobile application operated by a user to sign in to your app and access their data.
 
@@ -79,7 +77,7 @@ sequenceDiagram
     Resource-->>-Client: Protected resource
 ```
 
-#### Proof Key for Code Exchange (PKCE)
+#### 1.1 Proof Key for Code Exchange (PKCE)
 
 Enhances the security of the OAuth 2.0 Authorization Code Grant flow. It was originally designed for mobile and public client applications that can't securely store a client secret, but it's now recommended for all client types.
 
@@ -95,37 +93,71 @@ Here's how _PKCE_ works:
 
 5. **Token Response**: The authorization server verifies the code challenge with the code verifier. If they match, it issues the access token.
 
-### Client Credentials
+### 2. Client Credentials
 
 > Sometimes called _two-legged OAuth_
 
 Permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. Can be used to access web-hosted resources by using the identity of an application. This type is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user, and is often referred to as _daemons_ or _service accounts_.
 
-### Refresh Token
+### 3. Refresh Token
 
 This grant type allows clients to obtain new access tokens using refresh tokens without involving the user again. It is typically used in combination with other grant types (e.g., [authorization code](#authorization-code) grant) to extend the session without user re-authentication.
 
-### Device Authorization Grant
+### 4. Device Authorization Grant
 
-Allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer. To enable this flow, the device has the user visit a webpage in a browser on another device to sign in. Once the user signs in, the device is able to get access tokens and refresh tokens as needed.
+Allows users to sign in to input-constrained devices such as a _Smart TV_, _IoT_ device, or a printer. To enable this flow, the device has the user visit a webpage in a browser on another device to sign in. Once the user signs in, the device is able to get access tokens and refresh tokens as needed.
 
-### Implicit flow (legacy)
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Browser as Web Browser
+    participant Client as Device <br /> (Client)
+    participant Server as OAuth Server
+    participant Resource as Resource Server
+
+    Client->>+Server: Request client identifier <br /> (client_id, scope)
+    Note over Server: ~/oauth/v2/device
+    Server->>-Client: Response <br /> (device_code, user_code, verification_uri)
+
+    loop Poll
+        Client->>+Server: Request <br /> (client_id, device_code)
+        Note over Server: ~/oauth/v2/token
+        Server->>-Client: Response <br /> (authorization_pending, slow_down)
+    end
+
+    par User's authentication & authorization
+      Browser->>+Server: Request verification_uri (user_code)
+      Server->>-Browser: Auth challenge
+      Note over Browser: User reviews authorization request
+      Browser->>+Server: User authorizes
+      Server->>-Browser: Authorization result
+    end
+
+    Client->>+Server: Request <br /> (client_id, device_code)
+    Note over Server: ~/oauth/v2/token
+    Server->>-Client: Response <br /> (access_token, refresh_token, id_token)
+
+    Client->>+Resource: Request protected resource <br /> (with access token)
+    Resource->>-Client: Protected resource
+```
+
+### 5. Implicit flow (deprecated)
 
 > **Do not use the implicit grant flow!**. In most scenarios, more secure alternatives are available and recommended. Certain configurations of this flow requires a very high degree of trust in the application, and carries risks that are not present in other flows. You should only use this flow when other more secure flows aren't viable.
 
 The defining characteristic of the implicit grant is that tokens (ID tokens or access tokens) are returned directly from the `/authorize` endpoint instead of the `/token` endpoint. This is often used as part of the [authorization code](#authorization-code) flow, in what is called the _hybrid flow_ - retrieving the ID token on the `/authorize` request along with an authorization code.
 
-### Resource Owner Password Credentials (ROPC)
+### 6. Resource Owner Password Credentials (ROPC)
 
 > **Do not use the ROPC flow!**; it's incompatible with multifactor authentication (MFA). In most scenarios, more secure alternatives are available and recommended. This flow requires a very high degree of trust in the application, and carries risks that aren't present in other flows. You should only use this flow when more secure flows aren't viable.
 
-> Sometimes called password grant
-
 Allows an application to sign in the user by directly handling their password. This article describes how to program directly against the protocol in your application.
+
+> Sometimes called password grant
 
 ## More Information
 
 - [OAuth 2.0](https://oauth.net/2/)
-- [OAuth Playground](https://www.oauth.com/playground/)
+  - [Playground](https://www.oauth.com/playground/)
 - [Token grant flows - Microsoft Docs](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
-- [OAuth 2.0 access tokens explained](https://www.youtube.com/watch?v=BNEoKexlmA4)
+- [OAuth 2.0 access tokens explained - YouTube](https://www.youtube.com/watch?v=BNEoKexlmA4)
