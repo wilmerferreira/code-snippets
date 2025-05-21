@@ -12,7 +12,7 @@ docker run -d --name oracle -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=YourStrongPa
 
 ## IDEs
 
-- [Oracle SQL Developer](https://www.oracle.com/database/sqldeveloper/)
+- [Oracle SQL Developer](https://www.oracle.com/database/sqldeveloper/) (official IDE)
 - [DBeaver](https://dbeaver.io/)
 - [DataGrip](https://www.jetbrains.com/datagrip/)
 - [Toad for Oracle](https://www.quest.com/products/toad-for-oracle/)
