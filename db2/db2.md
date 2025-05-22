@@ -59,6 +59,6 @@ docker run --name db2 -e DB2INSTANCE=db2inst1 -e DB2INST1_PASSWORD=YourStrongPas
 
 ## More Information
 
-- [MySQL Docs](https://dev.mysql.com/doc/)
+- [IBM Db2 for Linux, UNIX and Windows documentation](https://www.ibm.com/docs/en/db2)
   - [Installing the Db2 Community Edition Docker image on Windows systems](https://www.ibm.com/docs/en/db2/11.5.x?topic=system-windows)
   - [SQL: The language of Db2](https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=db2-sql)
