@@ -86,7 +86,23 @@ This template comes with [karma](https://karma-runner.github.io/) and [jasmine](
 
 ## Events
 
-`PENDING`
+Angular supports defining event listeners on an element in your template by specifying the event name inside parentheses along with a statement that runs every time the event occurs.
+
+> It is a good practice to prefix the functions bound to events with `on`, e.g. `onClick()`
+
+```ts
+@Component({
+  template: `
+    <button (click)="onButtonClick()" />
+  `,
+  // ...
+})
+export class AppComponent {
+  onButtonClick(): void {
+    console.log('Button clicked!');
+  }
+}
+```
 
 ## Directives
 
