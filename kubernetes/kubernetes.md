@@ -239,7 +239,35 @@ Is the plugin manager for `kubectl` command-line tool. It  helps you:
 - metrics-server
 - Rolling upgrade / rollback
 - jobs / cronjobs
-- resource requests/limits (memory and cpu)
+- resource requests/limits (memory and cpu): `requests` is the **minimum size** required for this resource, `limits` is the **maximum size** allowed for this resource
+
+  ```yaml
+  apiVersion: v1
+  kind: Pod
+  spec:
+    containers:
+      - name: your-container-name-goes-here
+        # ...
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+  ```
+
+  These uses the following suffixes for sizes
+
+  | Unit      | One digit | Two digits  |
+  |-----------|-----------|-------------|
+  | Kilobytes | K         | Ki          |
+  | Megabytes | M         | Mi          |
+  | Gigabytes | G         | Gi          |
+  | Terabytes | T         | Ti          |
+  | Petabytes | P         | Pi          |
+  | Exabytes  | E         | Ei          |
+
 - zero trust networking or beyond corp
 - service mesh
 - `kubectx`

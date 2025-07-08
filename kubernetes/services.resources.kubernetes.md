@@ -33,18 +33,26 @@ Services can be reached within the cluster using this format `<SERVICE>.<NAMESPA
 
 ## Types
 
+There are some types of services:
+
+- [ClusterIP](#clusterip):     Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default that is used if you don't explicitly specify a type for a Service. You can expose the Service to the public internet using an Ingress or a Gateway.
+  - [Headless](#headless)
+- [ExternalName](#externalname): Maps the Service to the contents of the `externalName` field (for example, to the hostname `api.foo.bar.example`). The mapping configures your cluster's DNS server to return a `CNAME` record with that external hostname value. No proxying of any kind is set up.
+- [LoadBalancer](#loadbalancer): Exposes the Service externally using an external load balancer. Kubernetes does not directly offer a load balancing component; you must provide one, or you can integrate your Kubernetes cluster with a cloud provider.
+- [NodePort](#nodeport): Exposes the Service on each Node's IP at a static port (the `NodePort`). To make the node port available, Kubernetes sets up a cluster IP address, the same as if you had requested a Service of type: ClusterIP.
+
 ### ClusterIP
 
-**default** and randomly forward traffic to any pod set with target port.
+This is the **default** type when unassigned, it randomly forward traffic to any pod set with target port.
 
 - `ClusterIP` is the default and most common service type.
 - Kubernetes will assign a cluster-internal IP address to `ClusterIP` service. This makes the service **only** reachable within the cluster.
 - You cannot make requests to service (pods) from outside the cluster.
 - You can optionally set cluster IP in the service definition file.
 
-### Headless
+#### Headless
 
-send traffic to a very specific pod, when you have stateful pods, e.g., databases
+Send traffic to a very specific pod, when you have stateful pods, e.g., databases
 
 ### NodePort
 
