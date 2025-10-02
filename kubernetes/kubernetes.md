@@ -55,11 +55,11 @@ The built-in namespaces are:
 
 ## Distributions
 
-- minikube
-- k3s
-- k3d
-- kind
-- microk8s
+- [minikube](https://minikube.sigs.k8s.io/)
+- [k3s](https://k3s.io/)
+- [k3d](https://k3d.io/)
+- [kind](https://kind.sigs.k8s.io/)
+- [microk8s](https://microk8s.io/)
 
 ## Managed Kubernetes Providers
 
