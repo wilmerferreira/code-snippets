@@ -1,6 +1,6 @@
 # Python: pip
 
-`pip` is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes
+All the packages can be found in the [python package index](https://pypi.org/). `pip` is the package installer for Python. You can use `pip` to manage packages in your project using the _Python Package Index_ and other indexes.
 
 ```py
 python -m pip install requests

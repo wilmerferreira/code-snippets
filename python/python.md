@@ -3,6 +3,25 @@
 - Is Case sensitive
 - Use the `\` character to split the comments
 
+## Configuration
+
+- `pyproject.toml`
+
+  ```toml
+  [project]
+  name = "example-package"
+  version = "0.1.0"
+  description = "An example Python package"
+  dependencies = ["requests", "numpy"]
+  ```
+
+- `requirements.txt`
+
+  ```txt
+  beautifulsoup4==4.12.2
+  requests==2.28.2
+  ```
+
 ## Comments
 
 - Single line comments
