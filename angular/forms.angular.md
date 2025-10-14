@@ -78,7 +78,7 @@ export class MediaItemFormComponent {
 </form>
 ```
 
-## Model-driven Forms
+## Reactive Forms
 
 > It needs to add the `ReactiveFormsModule` in the `imports` property within the `app.module.ts`, this module can be imported from `@angular/forms`
 
@@ -87,6 +87,62 @@ export class MediaItemFormComponent {
 - Create a variable for the `FormGroup`
 - Implement the `ngOnInit` function and initialize the `FormGroup` variable, setting the default values for each of the properties
 - Add the function to handle the form submission (`onSubmit` in this case) with an argument for the form values (`mediaItem` in this case)
+
+Here's an example of a login component using reactive forms
+
+- Markup
+
+  ```html
+  <!-- 👇 "formGroup" is required when using "formControlName" -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" [formControl]="loginForm.controls.email" /> <!-- Use "formControl" for binding -->
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" /> <!-- Alternatively use "formControlName" -->
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  ```
+
+- Typescript
+
+  ```ts
+  import { Component } from '@angular/core';
+  import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+  
+  @Component({
+    selector: 'app-login',
+    standalone: true,
+    imports: [ReactiveFormsModule],
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
+  })
+  export class LoginComponent {
+    loginForm: new FormGroup({
+      // 👇 The first argument is the initial value
+      email: new FormControl('', {
+        validators: [ Validators.email, Validators.required ]
+      }),
+      password: new FormControl('', {
+        validators: [ Validators.required, Validators.minLength(6) ]
+      })
+    });
+
+    onSubmit() {
+      console.dir(loginForm);
+
+      const enteredEmail = this.loginForm.email;
+      const enteredPassword = this.loginForm.password;
+
+      console.log({ enteredEmail, enteredPassword });
+    }
+  }
+  ```
+
+This is another example using reactive forms:
 
 ```ts
 import { Component, OnInit } from '@angular/core';
