@@ -5,7 +5,7 @@
 This uses the [official image from docker hub](https://hub.docker.com/r/microsoft/mssql-server/)
 
 ```sh
-docker run --name "sql-server-2022" -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd!" -p 1433:1433 -d --restart always mcr.microsoft.com/mssql/server:2022-latest
+docker run --name "mssql" -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd" -p 1433:1433 -d --restart always mcr.microsoft.com/mssql/server:2025-latest
 ```
 
 ## IDEs
