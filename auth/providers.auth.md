@@ -31,9 +31,9 @@ Here are some of the [Open ID Connect](./openid.auth.md) providers that can run 
   http://localhost:8000/.well-known/openid-configuration
   ```
 
-- FusionAuth
-- Gluu
-- Kanidm
+- [FusionAuth](https://fusionauth.io/)
+- [Gluu](https://www.gluu.org/)
+- [Kanidm](https://www.kanidm.dev/)
 - [Keycloak](https://www.keycloak.org/)
 
   Docker command
@@ -61,6 +61,20 @@ Here are some of the [Open ID Connect](./openid.auth.md) providers that can run 
   GET http://127.0.0.1:8080/realms/master/.well-known/openid-configuration
   ```
 
-- Logto
-- Ory
-- Zitadel
+- [Logto](https://logto.io/)
+- [Ory](https://www.ory.sh/)
+- [Zitadel](https://zitadel.com/)
+
+## SaaS providers
+
+Here are some cloud-hosted authentication providers with hosted identity services:
+
+- [Microsoft Entra ID](https://www.microsoft.com/security/business/identity)
+- [Google Identity](https://cloud.google.com/identity)
+- [AWS Cognito](https://aws.amazon.com/cognito/)
+- [Clerk](https://clerk.dev/)
+- [Auth0](https://auth0.com/)
+- [Okta](https://www.okta.com/)
+- [Firebase Authentication](https://firebase.google.com/products/auth)
+- [Supabase Auth](https://supabase.com/auth)
+- [Magic](https://magic.link/)
