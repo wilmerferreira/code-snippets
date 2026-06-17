@@ -1,12 +1,42 @@
-# Auth: Providers
+# Auth - Providers
+
+## Local providers
 
 Here are some of the [Open ID Connect](./openid.auth.md) providers that can run locally:
 
 - [Authentik](https://goauthentik.io/)
 - [Authelia](https://www.authelia.com/)
-- [Keycloak](https://www.keycloak.org)
+- [Casdoor](https://casdoor.org/)
 
-  Docker
+  Docker command
+
+  ```sh
+  docker run -p 8000:8000 casbin/casdoor-all-in-one
+  ```
+
+  Url
+
+  ```http
+  GET http://localhost:8000/
+  ```
+
+  Admin credentials
+
+  - Username: `admin`
+  - Password: `123`
+
+  Discovery url
+
+  ```http
+  http://localhost:8000/.well-known/openid-configuration
+  ```
+
+- FusionAuth
+- Gluu
+- Kanidm
+- [Keycloak](https://www.keycloak.org/)
+
+  Docker command
 
   ```sh
   docker run -p 127.0.0.1:8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.4.7 start-dev
@@ -15,7 +45,7 @@ Here are some of the [Open ID Connect](./openid.auth.md) providers that can run 
   Url
 
   ```http
-  GET http://localhost
+  GET http://127.0.0.1:8080/
   ```
 
   Admin credentials
@@ -23,16 +53,14 @@ Here are some of the [Open ID Connect](./openid.auth.md) providers that can run 
   - Username: `admin`
   - Password: `admin`
 
-  Discovery url:
+  Discovery url
+
+  > The following example uses the built-in _realm_
 
   ```http
-  GET http://localhost:8080/realms/master/.well-known/openid-configuration
+  GET http://127.0.0.1:8080/realms/master/.well-known/openid-configuration
   ```
 
-- [Zitadel](https://zitadel.com/)
-- [Ori Hydra](https://www.ory.com)
-- [Casdoor](https://casdoor.org/)
-- [Logto](https://logto.io/)
-- [FusionAuth](https://fusionauth.io)
-- [Gluu](https://gluu.org)
-- [Kanidm](https://kanidm.com/)
+- Logto
+- Ory
+- Zitadel
