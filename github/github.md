@@ -9,9 +9,28 @@ By default git uses the email of the account configured in your local system, th
    ```sh
    git config user.email "11060801+wilmerferreira@users.noreply.github.com"
    ```
-   
+
 2. Just using the _username_
-   
+
    ```sh
    git config user.email "wilmerferreira@users.noreply.github.com"
    ```
+
+## Common files
+
+There are some common files used by open source projects, here are some of them:
+
+- `README.md`
+- `CODE_OF_CONDUCT.md`
+- `CONTRIBUTING.md`
+- `LICENSE.md`
+- `SUPPORT.md`
+- `CHANGELOG.md`
+- `SECURITY.md`
+
+All these files listed above can be found with the `.md` extension or without extension, however the following one must be created with the exact name.
+
+- `CITATION.cff`
+- `CODEOWNERS`
+
+For more information check the [supported file types](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file#supported-file-types)
