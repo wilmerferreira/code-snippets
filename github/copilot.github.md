@@ -43,9 +43,16 @@
   - `#app/routes.ts:12` Review this specific line.
   - `#app/routes.ts:12-18` Refactor this block of code.
 
-## `.github` files and folders for Copilot customization
+## .github files and folders for Copilot customization
 
 GitHub Copilot supports repository-level customization using files and folders under `.github`.
+
+| Type            | Use case                                                                                                                          |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Custom Agents   | When we need to manage or limit available tools                                                                                   |
+| Custom Prompts  | When we find ourselves typing the same prompt over and over                                                                       |
+| Agent Skills    | When we want a determined outcome or output                                                                                       |
+| Instructions    | When we want to influence the output, but not necessarily with a determined output. e.g., coding standards with example snippets  |
 
 ### Direct repo files
 
