@@ -40,6 +40,31 @@
     - Scenarios
   - [C4 model](https://en.wikipedia.org/wiki/C4_model)
 
+## Test strategy
+
+- Shift left
+  - Unit tests
+  - Integration tests
+  - Contract tests
+
+- Shift right
+  - Chaos engineering
+  - Load tests
+
+## Deployment methods
+
+- Blue/gree
+- Canary releases
+
+## Production support
+
+- Incident management & protocol
+  - Incident commander (lead)
+  - Scribe
+- Post mortem
+- High availability
+- Disaster recovery
+
 # More Information
 
 - [https://learn.microsoft.com/en-us/azure/architecture/patterns/](Cloud design patterns)

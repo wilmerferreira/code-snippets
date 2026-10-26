@@ -86,6 +86,13 @@ GitHub Copilot supports repository-level customization using files and folders u
   - Example: `.github/agents/review.agent.md`
   - Agent files can describe a multi-step process or a domain-specific assistant.
 
+#### Types
+
+- Local agent
+- Background agent (cli)
+- Cloud agent
+- Sub agent
+
 ### Skills
 
 - `.github/skills/*.skill.md`
@@ -94,3 +101,8 @@ GitHub Copilot supports repository-level customization using files and folders u
   - Skill files can encapsulate reusable behavior, best practices, or domain-specific helpers.
 
 > Tip: The instruction, prompt, agent, and skill files are placed in dedicated `.github` subfolders, not directly in the root `.github` folder.
+
+## More Information
+
+- [Agent Skills](https://agentskills.io/home)
+- [Skills.sh](https://www.skills.sh/)
